@@ -1,0 +1,54 @@
+body{
+    background-color:#f5f7fa;
+}
+
+.card{
+    border:none;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.recipe-image{
+    height:220px;
+    object-fit:cover;
+}
+
+.badge{
+    font-size:.9rem;
+}
+
+.page-title{
+    font-weight:700;
+}
+
+.form-card{
+    max-width:700px;
+    margin:auto;
+}
+
+footer{
+    margin-top:60px;
+    padding:20px;
+    text-align:center;
+    color:gray;
+}
+
+.default_image{
+    width: 200px;
+}
+.recipe-image{
+    width: 200px;
+    height: auto;
+}
+.recipe-card{
+    background-color: rgba(211, 255, 221, 0.423);
+    margin: 20px;
+    border: 2px solid darkgreen;
+    padding: 10px;
+    border-radius: 15px;
+}

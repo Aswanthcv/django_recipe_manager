@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h2 class="page-title mb-4">
+
+All Recipes
+
+</h2>
+
+{% for recipe in recipes %}
+
+  <div class="row recipe-card">
+  {% if recipe.image %}
+    <img src="{{recipe.image.url}}" alt="{{ recipeimage }}" class="recipe-image">
+  {% else %}
+    <img src="{% static 'images/whiterice-cooked.jpg' %}" alt="Static image" class="default_image">
+  {% endif %} 
+  <h2>Dish: {{ recipe.name }}</h2>
+  <!-- <p>Ingredients: {{ recipe.ingredients }}</p>  
+  <h3>Cooking time: {{ recipe.cooking_time }} minutes</h3>
+  <h3>DIfficulty level: {{ recipe.difficulty_level }}</h3>
+  <p>Instructions: {{ recipe.instructions }}</p> -->
+  <button class="btn-warn">View</button>
+  <button class="btn-primary">Edit</button>
+  <button class="btn-danger">Delete</button>
+</div>
+
+{% endfor %}
+
+{% endblock %}

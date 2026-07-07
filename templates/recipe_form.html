@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card form-card">
+
+<div class="card-body">
+
+<h3 class="mb-4">
+
+Add Recipe
+
+</h3>
+
+<form action="" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+    <label for="">Recipe Name</label>
+    {{form.name}}
+
+    <label for="">Ingredients</label>
+    {{form.ingredients}}
+
+    <label for="">Cooking Time</label>
+    {{form.cooking_time}}
+
+    <label for="">Difficulty level</label>
+    {{form.difficulty_level}}
+
+    <label for="">Instructions</label>
+    {{form.instructions}}
+    
+    <label for="">image</label>
+    {{form.image}}
+
+  
+    {{ form.success }}
+
+    {% for error in form.name.errors %}
+      <p class="text-danger">{{ error }}</p>
+    {% endfor %}
+
+    <button type="submit">Save Recipe</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+{% endblock %}
