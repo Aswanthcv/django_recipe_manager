@@ -68,12 +68,19 @@ def edit_recipe(request,id):
 def delete_recipe(request,id):
   recipe = Recipe.objects.get(id=id)
 
-  recipe.delete()
-  
-  print("The recipe is deleted")
 
   context = {
     'recipe':recipe
   }
+
+  return render(request,'recipe_delete.html',context)
+
+def confirm_delete(request,id):
+  recipe = Recipe.objects.get(id=id)
+
+  if request.method == 'POST':
+    recipe.delete()
+    print("recipe deleted")
+    return redirect('recipe_list')
 
   return redirect('recipe_list')

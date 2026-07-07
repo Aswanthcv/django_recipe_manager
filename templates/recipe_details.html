@@ -23,6 +23,9 @@
 
   {{ recipe.instructions }}
 
+  <a href="{% url 'edit_recipe' recipe.id %}" class="btn btn-warning">Edit</a>
+  <a href="{% url 'delete_recipe' recipe.id %}" class="btn btn-danger ">Delete</a>
+  
 </div>
 
 </div>
