@@ -51,4 +51,9 @@ footer{
     border: 2px solid darkgreen;
     padding: 10px;
     border-radius: 15px;
+}           
+.action-btns{
+    gap: 20px;
+    display: flex;
+
 }

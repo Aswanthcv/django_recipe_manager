@@ -33,3 +33,47 @@ def recipe_form(request):
   }
     
   return render(request, 'recipe_form.html',context)
+
+def recipe_details(request,id):
+  recipe = Recipe.objects.get(id=id)
+
+  context = {
+    'recipe':recipe
+  }
+
+  return render(request,'recipe_details.html',context)  
+
+
+def edit_recipe(request,id):
+  recipe = Recipe.objects.get(id=id)
+
+  form = RecipeForm(instance=recipe)
+
+  if request.method == "POST":
+   
+    form = RecipeForm(request.POST,request.FILES,instance=recipe)
+
+    if form.is_valid():
+      
+      form.save()
+      
+      return redirect('recipe_list')
+
+  context = {
+    'form':form
+  }
+    
+  return render(request, 'recipe_form.html',context)
+
+def delete_recipe(request,id):
+  recipe = Recipe.objects.get(id=id)
+
+  recipe.delete()
+  
+  print("The recipe is deleted")
+
+  context = {
+    'recipe':recipe
+  }
+
+  return redirect('recipe_list')

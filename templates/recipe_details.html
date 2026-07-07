@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
@@ -6,17 +7,21 @@
 
 <div class="card-body">
 
-<!-- Recipe Image -->
+  {% if recipe.image %}
+    <img src="{{ recipe.image.url }}" alt="{{ recipe.name }}" class="recipe-image"> 
+  {% else %}
+    <img src="{% static 'images/whiterice-cooked.jpg' %}" alt="Static image" class="default_image">
+  {% endif %}
 
-<!-- Recipe Name -->
+  <h2>{{ recipe.name }}</h2>
 
-<!-- Cooking Time -->
+  {{ recipe.ingredients }}
 
-<!-- Difficulty -->
+  {{ recipe.cooking_time }} minutes
 
-<!-- Ingredients -->
+  <b>{{ recipe.difficulty_level }}</b>
 
-<!-- Instructions -->
+  {{ recipe.instructions }}
 
 </div>
 
