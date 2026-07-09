@@ -32,9 +32,6 @@ Add Recipe
     <label for="">image</label>
     {{form.image}}
 
-  
-    {{ form.success }}
-
     {% for error in form.name.errors %}
       <p class="text-danger">{{ error }}</p>
     {% endfor %}

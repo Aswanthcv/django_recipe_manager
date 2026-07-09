@@ -17,15 +17,12 @@ All Recipes
   {% else %}
     <img src="{% static 'images/whiterice-cooked.jpg' %}" alt="Static image" class="default_image">
   {% endif %} 
-  <h2>Dish: {{ recipe.name }}</h2>
-  <!-- <p>Ingredients: {{ recipe.ingredients }}</p>  
-  <h3>Cooking time: {{ recipe.cooking_time }} minutes</h3>
-  <h3>DIfficulty level: {{ recipe.difficulty_level }}</h3>
-  <p>Instructions: {{ recipe.instructions }}</p> -->
+  <h2>{{ recipe.name }}</h2>
   <div class="action-btns">
     <a href="{% url 'recipe_details' recipe.id %}" class="btn btn-success">View</a>
   </div>
 </div>
+
 
 {% endfor %}
 

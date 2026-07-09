@@ -19,11 +19,11 @@ def recipe_form(request):
   form=RecipeForm()
 
   if request.method == "POST":
-    print("form submitted")
+    
     form = RecipeForm(request.POST,request.FILES)
 
     if form.is_valid():
-      messages.error(request, "Recipe already exists!")
+  
       form.save()
       messages.success(request, "Recipe added successfully!")
       return redirect('recipe_list')
@@ -56,10 +56,11 @@ def edit_recipe(request,id):
     if form.is_valid():
       
       form.save()
+      messages.success(request, "Recipe updated successfully!")
       
       return redirect('recipe_list')
 
-  context = {
+  context = {   
     'form':form
   }
     
@@ -80,7 +81,7 @@ def confirm_delete(request,id):
 
   if request.method == 'POST':
     recipe.delete()
-    print("recipe deleted")
+    messages.success(request,"Recipe deleted successfully!")
     return redirect('recipe_list')
 
   return redirect('recipe_list')
