@@ -9,6 +9,20 @@
 
 <div class="row g-4">
 
+    <!-- dummmy card -->
+    <div class="col-lg-4 col-md-6">
+        <a href="{% url 'recipe_form' %}" class="text-decoration-none">
+            <div class="recipe-card add-card">
+
+                <div class="add-card-content">
+                    <div class="plus-icon">+</div>
+                    <p>Add New Recipe</p>
+                </div>
+
+            </div>
+        </a>
+    </div>
+
     {% for recipe in recipes %}
 
     <div class="col-lg-4 col-md-6">
@@ -41,19 +55,6 @@
 
     {% endfor %}
 
-    <!-- dummmy card -->
-    <div class="col-lg-4 col-md-6">
-        <a href="{% url 'recipe_form' %}" class="text-decoration-none">
-            <div class="recipe-card add-card">
-
-                <div class="add-card-content">
-                    <div class="plus-icon">+</div>
-                    <p>Add New Recipe</p>
-                </div>
-
-            </div>
-        </a>
-    </div>
 
 </div>
 

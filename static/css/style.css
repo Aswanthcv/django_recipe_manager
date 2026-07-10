@@ -64,6 +64,30 @@ body{
     color:#ffffff;
 }
 
+.nav-buttons{
+
+    display:flex;
+
+    gap:12px;
+}
+
+.home-btn{
+
+    background:#ffffff;
+    color:#c65d3b;
+    border:1px solid #c65d3b;
+    border-radius:10px;
+    padding:10px 22px;
+    font-weight:500;
+    transition:.25s;
+}
+
+.home-btn:hover{
+
+    background:#c65d3b;
+    color:#ffffff;
+}
+
 .footer{
     margin-top:40px;
     padding:12px;

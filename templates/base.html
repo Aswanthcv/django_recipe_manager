@@ -30,12 +30,22 @@
     <div class="container-fluid px-5">
 
         <a href="{% url 'recipe_list' %}" class="navbar-brand brand-logo">
-             Recipe Manager
+            Recipe Manager
         </a>
 
-        <a href="{% url 'recipe_form' %}" class="btn add-btn">
-             Add Recipe
-        </a>
+        <div class="nav-buttons">
+
+            {% if request.resolver_match.url_name != 'recipe_list' %}
+                <a href="{% url 'recipe_list' %}" class="btn home-btn">
+                    Home
+                </a>
+            {% endif %}
+
+            <a href="{% url 'recipe_form' %}" class="btn add-btn">
+                Add Recipe
+            </a>
+
+        </div>
 
     </div>
 
