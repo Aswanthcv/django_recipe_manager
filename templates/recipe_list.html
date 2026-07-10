@@ -20,7 +20,7 @@
             {% else %}
                 <img src="{% static 'images/recipe_default.jpg' %}" alt="Default Image" class="recipe-image">
             {% endif %}
-            
+
             <div class="recipe-content">
 
                 <h4>{{ recipe.name }}</h4>
@@ -40,6 +40,20 @@
     </div>
 
     {% endfor %}
+
+    <!-- dummmy card -->
+    <div class="col-lg-4 col-md-6">
+        <a href="{% url 'recipe_form' %}" class="text-decoration-none">
+            <div class="recipe-card add-card">
+
+                <div class="add-card-content">
+                    <div class="plus-icon">+</div>
+                    <p>Add New Recipe</p>
+                </div>
+
+            </div>
+        </a>
+    </div>
 
 </div>
 
