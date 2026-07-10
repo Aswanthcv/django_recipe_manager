@@ -1,6 +1,3 @@
-/* ------------------ */
-/* GLOBAL */
-/* ------------------ */
 
 *{
     margin:0;
@@ -25,10 +22,7 @@ body{
     flex:1;
 }
 
-/* ------------------ */
-/* NAVBAR */
-/* ------------------ */
-
+/* navbar */
 .custom-navbar{
     position:fixed;
     top:0;
@@ -54,11 +48,6 @@ body{
     color:#4CAF50 !important;
 }
 
-
-/* ------------------ */
-/* ADD BUTTON */
-/* ------------------ */
-
 .add-btn{
 
     background:#4CAF50;
@@ -77,19 +66,12 @@ body{
 }
 
 
-/* ------------------ */
-/* ALERTS */
-/* ------------------ */
-
+/* messages */
 .message-container{
 
     margin-bottom:15px;
 }
 
-
-/* ------------------ */
-/* FOOTER */
-/* ------------------ */
 
 .footer{
     margin-top:40px;
@@ -99,9 +81,6 @@ body{
     border-top:1px solid #ddd;
 }
 
-/* ===========================
-   PAGE TITLE
-=========================== */
 
 .page-title{
 
@@ -110,292 +89,168 @@ body{
     margin-bottom:30px;
 }
 
-
-/* ===========================
-   CARD
-=========================== */
-
+/* body */
 .recipe-card{
 
     background:white;
-
     border:1px solid #d9e7d8;
-
     border-radius:14px;
-
     overflow:hidden;
-
     transition:.25s;
-
     height:100%;
 }
 
 .recipe-card:hover{
 
     transform:translateY(-5px);
-
     border-color:#4CAF50;
 }
-
-
-/* ===========================
-   IMAGE
-=========================== */
 
 .recipe-image{
 
     width:100%;
-
     height:220px;
-
     object-fit:cover;
 }
 
-
-/* ===========================
-   CONTENT
-=========================== */
-
 .recipe-content{
-
     padding:18px;
-
     text-align:center;
 }
 
 .recipe-content h4{
 
     font-size:1.2rem;
-
     margin-bottom:10px;
-
     font-weight:600;
 }
-
-
-/* ===========================
-   DIFFICULTY
-=========================== */
 
 .difficulty{
 
     display:inline-block;
-
     color:#2E7D32;
-
     font-size:.90rem;
-
     margin-bottom:20px;
 }
-
-
-/* ===========================
-   BUTTON
-=========================== */
 
 .view-btn{
 
     background:#4CAF50;
-
     color:white;
-
     width:100%;
-
     border-radius:8px;
-
     font-weight:500;
 }
 
 .view-btn:hover{
 
     background:#388E3C;
-
     color:white;
 }
 
-/* ==========================
-   DETAIL CARD
-========================== */
-
+/* recipe detail page */
 .recipe-detail-card{
 
     width:90%;
-
     margin:auto;
-
     background:white;
-
     border:1px solid #d9e7d8;
-
     border-radius:15px;
-
     overflow:hidden;
 }
-
-
-/* ==========================
-   IMAGE
-========================== */
 
 .detail-image{
 
     width:100%;
-
     height:420px;
-
     object-fit:cover;
 }
 
-
-/* ==========================
-   BODY
-========================== */
-
 .detail-body{
-
     padding:35px;
 }
-
-
-/* ==========================
-   TITLE
-========================== */
 
 .recipe-title{
 
     font-size:2rem;
-
     font-weight:600;
-
     margin-bottom:30px;
 }
-
-
-/* ==========================
-   DETAILS
-========================== */
 
 .detail-item{
 
     display:flex;
-
     justify-content:space-between;
-
     margin-bottom:16px;
-
     font-size:1.05rem;
 }
 
 .label{
 
     font-weight:600;
-
     color:#4CAF50;
 }
-
-
-/* ==========================
-   TEXT
-========================== */
 
 .detail-text{
 
     line-height:1.8;
-
     color:#555;
 }
-
-
-/* ==========================
-   BUTTONS
-========================== */
 
 .detail-buttons{
 
     display:flex;
-
     justify-content:center;
-
     gap:20px;
-
     margin-top:40px;
 }
 
 .edit-btn{
 
     background:#4CAF50;
-
     color:white;
-
     padding:10px 25px;
-
     border-radius:8px;
 }
 
 .edit-btn:hover{
 
     background:#388E3C;
-
     color:white;
 }
 
 .delete-btn{
 
     background:#dc3545;
-
     color:white;
-
     padding:10px 25px;
-
     border-radius:8px;
 }
 
 .delete-btn:hover{
 
     background:#bb2d3b;
-
     color:white;
 }
 
-/* ===========================
-   FORM CARD
-=========================== */
-
+/* form */
 .recipe-form-card{
 
     width:50%;
-
     margin:0 auto;
-
     background:white;
-
     border:1px solid #d9e7d8;
-
     border-radius:14px;
-
     padding:25px 20px;
 }
-
-
-/* ===========================
-   TITLE
-=========================== */
 
 .form-title{
 
     text-align:center;
-
     font-size:1.8rem;
-
     font-weight:600;
-
     margin-bottom:20px;
 }
-
-
-/* ===========================
-   FORM
-=========================== */
 
 .form-group{
 
@@ -405,36 +260,24 @@ body{
 .form-group label{
 
     margin-bottom:5px;
-
     font-size:.95rem;
-
     font-weight:500;
 }
-
-
-/* ===========================
-   INPUTS
-=========================== */
 
 .form-group input,
 .form-group textarea,
 .form-group select{
 
     width:100%;
-
     border:1px solid #d9d9d9;
-
     border-radius:8px;
-
     padding:8px 12px;
-
     transition:.25s;
 }
 
 .form-group textarea{
 
     min-height:130px;
-
     resize:vertical;
 }
 
@@ -443,124 +286,76 @@ body{
 .form-group select:focus{
 
     outline:none;
-
     border-color:#4CAF50;
 }
-
-
-/* ===========================
-   BUTTON
-=========================== */
 
 .save-btn{
 
     width:100%;
-
     margin-top:10px;
-
     background:#4CAF50;
-
     color:white;
-
     padding:10px;
-
     border-radius:8px;
 }
 
 .save-btn:hover{
 
     background:#388E3C;
-
     color:white;
 }
 
-/* ===========================
-   DELETE PAGE
-=========================== */
-
+/* delete page */
 .delete-wrapper{
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     min-height:70vh;
 }
-
-
-/* ===========================
-   CARD
-=========================== */
 
 .delete-card{
 
     width:450px;
-
     background:white;
-
     border:1px solid #e0e0e0;
-
     border-radius:15px;
-
     padding:35px;
-
     text-align:center;
 }
-
-
-/* ===========================
-   TEXT
-=========================== */
 
 .delete-text{
 
     margin-top:15px;
-
     color:#666;
 }
 
 .recipe-delete-name{
 
     margin:15px 0;
-
     color:#d32f2f;
-
     font-weight:600;
 }
 
 .delete-warning{
 
     color:#999;
-
     font-size:.9rem;
 }
-
-
-/* ===========================
-   BUTTONS
-=========================== */
 
 .delete-buttons{
 
     display:flex;
-
     justify-content:center;
-
     gap:15px;
-
     margin-top:30px;
 }
 
 .cancel-btn{
 
     background:#ececec;
-
     color:#333;
-
     padding:10px 25px;
-
     border-radius:8px;
 }
 
@@ -572,13 +367,9 @@ body{
 .confirm-btn{
 
     background:#dc3545;
-
     color:white;
-
     border:none;
-
     padding:10px 25px;
-
     border-radius:8px;
 }
 
@@ -588,15 +379,12 @@ body{
     color: white;
 }
 
-/* form image clear */
+/* form image */
 
-/* Current image link */
 .form-group a{
 
     color:#4CAF50;
-
     text-decoration:none;
-
     font-weight:500;
 }
 
@@ -605,33 +393,23 @@ body{
     text-decoration:underline;
 }
 
-
-/* File input */
 .form-group input[type="file"]{
 
     width:100%;
-
     padding:10px;
-
     border:1px solid #d9d9d9;
-
     border-radius:10px;
 }
 
 
-/* Clear checkbox */
 .form-group input[type="checkbox"]{
 
     width:18px;
     height:18px;
-
     margin:0 8px 0 0;
-
     vertical-align:middle;
 }
 
-
-/* "Clear" label */
 .form-group label{
 
     font-weight:500;
