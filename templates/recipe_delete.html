@@ -1,20 +1,41 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block content %}
 
-<div class="delete_card">
-  <p>Are you sure?</p>
-  <h3>{{ recipe.name }}</h3>
-  <a href="{% url 'recipe_details' recipe.id %}" class="btn btn-secondary">Cancel</a>
-  <!-- <a href="{% url 'confirm_delete' recipe.id %}" class="btn btn-danger">Delete</a> -->
-   <form method="POST" action="{% url 'confirm_delete' recipe.id %}">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-danger">
-        Delete
-    </button>
-</form>
+<div class="delete-wrapper">
+
+    <div class="delete-card">
+
+        <h3>
+            Delete Recipe
+        </h3>
+
+        <p class="delete-text">
+            Are you sure you want to delete?
+        </p>
+
+        <h4 class="recipe-delete-name">
+            "{{ recipe.name }}"
+        </h4>
+
+        <div class="delete-buttons">
+
+            <a href="{% url 'recipe_details' recipe.id %}" class="btn cancel-btn">
+                Cancel
+            </a>
+
+            <form method="POST" action="{% url 'confirm_delete' recipe.id %}">
+                {% csrf_token %}
+                <button class="btn confirm-btn">
+                    Delete
+                </button>
+            </form>
+
+        </div>
+
+    </div>
+
 </div>
 
-{% endblock %}  
+{% endblock %}

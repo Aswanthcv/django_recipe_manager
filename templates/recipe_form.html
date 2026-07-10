@@ -2,46 +2,55 @@
 
 {% block content %}
 
-<div class="card form-card">
+<div class="recipe-form-card">
 
-<div class="card-body">
+    <h2 class="form-title">
+        Add New Recipe
+    </h2>
 
-<h3 class="mb-4">
+    <form method="POST" enctype="multipart/form-data">
 
-Add Recipe
+        {% csrf_token %}
 
-</h3>
+        <div class="form-group">
+            <label>Recipe Name</label>
+            {{ form.name }}
 
-<form action="" method="POST" enctype="multipart/form-data">
-  {% csrf_token %}
-    <label for="">Recipe Name</label>
-    {{form.name}}
+            {% for error in form.name.errors %}
+                <small class="text-danger">{{ error }}</small>
+            {% endfor %}
+        </div>
 
-    <label for="">Ingredients</label>
-    {{form.ingredients}}
+        <div class="form-group">
+            <label>Ingredients</label>
+            {{ form.ingredients }}
+        </div>
 
-    <label for="">Cooking Time</label>
-    {{form.cooking_time}}
+        <div class="form-group">
+            <label>Cooking Time (Minutes)</label>
+            {{ form.cooking_time }}
+        </div>
 
-    <label for="">Difficulty level</label>
-    {{form.difficulty_level}}
+        <div class="form-group">
+            <label>Difficulty Level</label>
+            {{ form.difficulty_level }}
+        </div>
 
-    <label for="">Instructions</label>
-    {{form.instructions}}
-    
-    <label for="">image</label>
-    {{form.image}}
+        <div class="form-group">
+            <label>Instructions</label>
+            {{ form.instructions }}
+        </div>
 
-    {% for error in form.name.errors %}
-      <p class="text-danger">{{ error }}</p>
-    {% endfor %}
+        <div class="form-group">
+            <label>Recipe Image</label>
+            {{ form.image }}
+        </div>
 
-    <button type="submit">Save Recipe</button>
+        <button class="btn save-btn">
+            Save Recipe
+        </button>
 
-
-</form>
-
-</div>
+    </form>
 
 </div>
 

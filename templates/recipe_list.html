@@ -4,26 +4,43 @@
 {% block content %}
 
 <h2 class="page-title mb-4">
-
-All Recipes
-
+    All Recipes
 </h2>
 
-{% for recipe in recipes %}
+<div class="row g-4">
 
-  <div class="row recipe-card">
-  {% if recipe.image %}
-    <img src="{{recipe.image.url}}" alt="{{ recipeimage }}" class="recipe-image">
-  {% else %}
-    <img src="{% static 'images/whiterice-cooked.jpg' %}" alt="Static image" class="default_image">
-  {% endif %} 
-  <h2>{{ recipe.name }}</h2>
-  <div class="action-btns">
-    <a href="{% url 'recipe_details' recipe.id %}" class="btn btn-success">View</a>
-  </div>
+    {% for recipe in recipes %}
+
+    <div class="col-lg-4 col-md-6">
+
+        <div class="recipe-card">
+
+            {% if recipe.image %}
+                <img src="{{ recipe.image.url }}" alt="{{ recipe.name }}" class="recipe-image">
+            {% else %}
+                <img src="{% static 'images/recipe_default.jpg' %}" alt="Default Image" class="recipe-image">
+            {% endif %}
+            
+            <div class="recipe-content">
+
+                <h4>{{ recipe.name }}</h4>
+
+                <span class="difficulty">
+                    {{ recipe.difficulty_level }}
+                </span>
+
+                <a href="{% url 'recipe_details' recipe.id %}" class="btn view-btn">
+                    View Recipe
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
 </div>
-
-
-{% endfor %}
 
 {% endblock %}

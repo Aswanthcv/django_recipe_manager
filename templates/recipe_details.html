@@ -3,30 +3,59 @@
 
 {% block content %}
 
-<div class="card">
+<div class="recipe-detail-card">
 
-<div class="card-body">
+    {% if recipe.image %}
+        <img src="{{ recipe.image.url }}" alt="{{ recipe.name }}" class="detail-image">
+    {% else %}
+        <img src="{% static 'images/recipe_default.jpg' %}" alt="Default Image" class="detail-image">
+    {% endif %}
 
-  {% if recipe.image %}
-    <img src="{{ recipe.image.url }}" alt="{{ recipe.name }}" class="recipe-image"> 
-  {% else %}
-    <img src="{% static 'images/whiterice-cooked.jpg' %}" alt="Static image" class="default_image">
-  {% endif %}
+    <div class="detail-body">
 
-  <h2>{{ recipe.name }}</h2>
+        <h2 class="recipe-title">
+            {{ recipe.name }}
+        </h2>
 
-  {{ recipe.ingredients }}
+        <div class="detail-item">
+            <span class="label">Difficulty</span>
+            <span>{{ recipe.difficulty_level }}</span>
+        </div>
 
-  {{ recipe.cooking_time }} minutes
+        <div class="detail-item">
+            <span class="label">Cooking Time</span>
+            <span>{{ recipe.cooking_time }} Minutes</span>
+        </div>
 
-  <b>{{ recipe.difficulty_level }}</b>
+        <hr>
 
-  {{ recipe.instructions }}
+        <h5>Ingredients</h5>
 
-  <a href="{% url 'edit_recipe' recipe.id %}" class="btn btn-warning">Edit</a>
-  <a href="{% url 'delete_recipe' recipe.id %}" class="btn btn-danger ">Delete</a>
-  
-</div>
+        <p class="detail-text">
+            {{ recipe.ingredients }}
+        </p>
+
+        <hr>
+
+        <h5>Instructions</h5>
+
+        <p class="detail-text">
+            {{ recipe.instructions }}
+        </p>
+
+        <div class="detail-buttons">
+
+            <a href="{% url 'edit_recipe' recipe.id %}" class="btn edit-btn">
+                Edit Recipe
+            </a>
+
+            <a href="{% url 'delete_recipe' recipe.id %}" class="btn delete-btn">
+                Delete Recipe
+            </a>
+
+        </div>
+
+    </div>
 
 </div>
 
